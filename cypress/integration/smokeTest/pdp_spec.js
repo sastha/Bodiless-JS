@@ -84,7 +84,8 @@ describe('PDP (Product Details Page) smoke tests', function () {
     cy.fixture(fileName).then(fileContent => {
       cy.get('input[type=file]').upload({ fileContent, fileName, mimeType: "image/jpeg" });
     })
-    cy.xpath(checkmarkIconImageFormXpath, { timeout: 10000 })
+    cy.wait(3000);
+    cy.xpath(checkmarkIconImageFormXpath)
       .click();
     cy.xpath(imagePlaceholderXpath)
       .should('have.attr', 'src', '/' + imageName);
