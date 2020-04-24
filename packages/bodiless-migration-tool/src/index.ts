@@ -116,7 +116,7 @@ class MigrationTool extends Command {
     const defaultSettingsPath = path.resolve(__dirname, '..', 'settings.json');
     const rootSettingsExist = fs.existsSync(rootSettingsPath);
     const settingsPath = rootSettingsExist ? rootSettingsPath : defaultSettingsPath;
-    console.log(`Applying migration settings from ${settingsPath}`);
+    console.log(`Forked repo - Applying migration settings from ${settingsPath}`);
     return JSON.parse(fs.readFileSync(settingsPath).toString());
   }
 }

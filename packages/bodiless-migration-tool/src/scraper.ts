@@ -75,6 +75,7 @@ export class Scraper extends EE<Events> {
       maxConcurrency: this.params.maxConcurrency || 1,
       obeyRobotsTxt: this.params.obeyRobotsTxt !== false,
       jsEnabled: this.params.javascriptEnabled,
+      options: { ignoreHTTPSErrors: true, headless: false, slowMo: 10 },
       // Function to be evaluated in browsers
       evaluatePage,
       // Function to do anything like modifying options before each request
